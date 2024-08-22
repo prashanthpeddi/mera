@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,tr,td{
+        border: 2px solid black;
+    }
+</style>
+<body>
+
+    <h1 class="reg">Electricity Board Management System</h1>
+      
+    <script>
+        var d = document.forms;
+
+       
+            var sign = localStorage.getItem("data") || "[]"; 
+            var pg = JSON.parse(sign);
+            console.log(pg);
+var tab=document.createElement("table");
+document.body.appendChild(tab);
+var tr1=document.createElement("tr");
+tab.appendChild(tr1);
+var td1=document.createElement("td");
+tr1.appendChild(td1)
+td1.innerHTML="<h2>S.NO</h2>";
+var td2=document.createElement("td");
+tr1.appendChild(td2)
+td2.innerHTML="<h2>Customer_id</h2>";
+var td3=document.createElement("td");
+tr1.appendChild(td3)
+td3.innerHTML="<h2>Name</h2>";
+var td4=document.createElement("td");
+tr1.appendChild(td4)
+td4.innerHTML="<h2>Age</h2>";
+var td5=document.createElement("td");
+tr1.appendChild(td5)
+td5.innerHTML="<h2>Adress</h2>";
+var td6=document.createElement("td");
+tr1.appendChild(td6)
+td6.innerHTML="<h2>Contact_Number</h2>";
+var td7=document.createElement("td");
+tr1.appendChild(td7)
+td7.innerHTML="<h2>ID proof</h2>";
+var td8=document.createElement("td");
+tr1.appendChild(td8)
+td8.innerHTML="<h2>Connection_type</h2>";
+var td9=document.createElement("td");
+tr1.appendChild(td9)
+td9.innerHTML="<h2>Password</h2>";
+      for (let i = 0; i < pg.length; i++) {
+        var tr2=document.createElement("tr");
+        tab.appendChild(tr2);
+        var td1=document.createElement("td");
+        tr2.appendChild(td1);
+        td1.innerHTML=i+1;
+        var td2=document.createElement("td");
+        tr2.appendChild(td2);
+        td2.innerHTML=pg[i].customer_id;
+        var td3=document.createElement("td");
+        tr2.appendChild(td3);
+        td3.innerHTML=pg[i].name;
+        var td4=document.createElement("td");
+        tr2.appendChild(td4);
+        td4.innerHTML=pg[i].age;
+        var td5=document.createElement("td");
+        tr2.appendChild(td5);
+        td5.innerHTML=pg[i].adress;
+        var td6=document.createElement("td");
+        tr2.appendChild(td6);
+        td6.innerHTML=pg[i].contact;
+        var td7=document.createElement("td");
+        tr2.appendChild(td7);
+        td7.innerHTML=pg[i].id_prof;
+        var td8=document.createElement("td");
+        tr2.appendChild(td8);
+        td8.innerHTML=pg[i].connection;
+        var td9=document.createElement("td");
+        tr2.appendChild(td9);
+        td9.innerHTML=pg[i].password;
+
+        
+        
+                // let res = pg[i].customer_id;
+                // console.log(res)
+                // let pas = pg[i].password;
+                //  nam=pg[i].name;
+
+               
+            }
+
+          
+        // });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .reg{
+        width: 100%;
+        height: 40px;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        line-height: 1.2;
+    }
+    .main{
+        width: 400px;
+        height: 490px;
+        background-color: antiquewhite;
+    }
+    .form{
+        margin-left: 80px;
+        position: absolute;
+        margin-top: 85px;
+        gap: 20px;
+    }
+    .he{
+position: absolute;
+margin-left: 80px;
+margin-top: 40px;
+color:darkgreen;
+
+    }
+    .form input{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 25PX;
+        /* width: 250px; */
+        background-color: antiquewhite;
+    
+        
+    }
+    #idd{
+        position: absolute;
+        color: red;
+        margin-left: 820px;
+        margin-top: -290px;
+    }
+    button{
+        position: absolute;
+        margin-left: 810px;
+        margin-top: -250px;
+        width: 100px;
+        height: 30px;
+    }
+    button a{
+        text-decoration: none;
+        color: green;
+    }
+</style>
+<body>
+
+        <div class="king">
+            <h1 class="reg">Electricity Board Management System</h1>
+            <h2 class="he">Register</h2>
+            <div class="main">
+                <form class="form">
+                 
+                    <input type="text" placeholder="Name " required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Age" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Adress" required>
+                    <br>
+                    <br>
+                    <input type="number" placeholder="Contact_number" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="ID proof" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="connection_type" required>
+                    <br>
+                    <br>
+                    <input type="password" placeholder="password" required>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="submit" style="width:80px;margin-right: 110px;border: 1PX solid black;background-color:aquamarine;">
+
+                </form>
+            </div>
+            <br>
+       <h2 id="idd">HELLO</h2>
+       <button ><a href="./user.html">LOGIN</a></button>
+        </div>
+    <script>
+        var d = document.forms;
+        console.log(d[0])
+
+        var arr = [];
+        var x=document.getElementById("idd");
+        d[0].addEventListener("submit", (e) => {
+            e.preventDefault();
+          let emp=Math.floor(Math.random() * 8000) + 1
+            x.innerHTML="YOUR NEW CUSTOMER_ID : "+emp;
+           obj={
+            customer_id: emp,
+            name: e.target[0].value,
+            age: e.target[1].value,
+            adress: e.target[2].value,
+            contact: e.target[3].value,
+            id_prof: e.target[4].value,
+            connection: e.target[5].value,
+            password: e.target[6].value
+           }
+            console.log(obj)
+            arr.push(obj)
+
+            console.log(arr)
+            e.target[0].value = "",
+                e.target[1].value = "",
+                e.target[2].value = "",
+                e.target[3].value = "",
+                e.target[4].value = "",
+                e.target[5].value = "",
+                e.target[6].value = ""
+            localStorage.setItem("data", JSON.stringify(arr));
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

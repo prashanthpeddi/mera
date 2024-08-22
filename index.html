@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="king">
+            <h2 class="reg">Electricity Board Management System</h2>
+            <h3>1.Add the customer</h3>
+            <div class="main">
+                <form class="form">
+                    <input type="text" placeholder="customer_id " required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Name " required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Age" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="Adress" required>
+                    <br>
+                    <br>
+                    <input type="number" placeholder="Contact_number" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="ID proof" required>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="connection_type" required>
+                    <br>
+                    <br>
+                    <input type="password" placeholder="password" required>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="submit" style="width:80px;margin-right: 110px;">
+
+                </form>
+            </div>
+            <br>
+       
+        </div>
+    <script>
+        var d = document.forms;
+        console.log(d[0])
+
+        var arr = [];
+        d[0].addEventListener("submit", (e) => {
+            e.preventDefault();
+           obj={
+            customer_id: e.target[0].value,
+            name: e.target[1].value,
+            age: e.target[2].value,
+            adress: e.target[3].value,
+            contact: e.target[4].value,
+            id_prof: e.target[5].value,
+            connection: e.target[6].value,
+            password: e.target[7].value
+           }
+            console.log(obj)
+            arr.push(obj)
+
+            console.log(arr)
+            e.target[0].value = "",
+                e.target[1].value = "",
+                e.target[2].value = "",
+                e.target[3].value = "",
+                e.target[4].value = "",
+                e.target[5].value = "",
+                e.target[6].value = "",
+                e.target[7].value = ""
+            localStorage.setItem("user", JSON.stringify(arr));
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
